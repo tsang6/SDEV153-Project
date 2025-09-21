@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header section with logo */
+.header {
+  background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+  padding: 20px 40px;
+  height: 25vh;
+  display: flex;
+  align-items: center;
+}
+
+/* Purple search section */
+.search-section {
+  background: linear-gradient(90deg, #8e44ad 0%, #9b59b6 100%);
+  padding: 15px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.search-bar {
+  background: white;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 300px;
+  text-align: center;
+  color: #333;
+}
+
+/* Main content area */
+.main-content {
+  background: linear-gradient(180deg, #95a5a6 0%, #7f8c8d 100%);
+  flex: 1;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.main-title {
+  font-size: 48px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.subtitle {
+  font-size: 20px;
+  color: #2c3e50;
+  font-weight: 500;
+}

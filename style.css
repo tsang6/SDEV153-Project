@@ -1,0 +1,683 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+  padding: 15px 40px;
+  height: 12vh;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.logo {
+  height: 70px;
+  width: auto;
+}
+
+.header-title {
+  font-size: 42px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+  margin: 0;
+}
+
+/* Search */
+.search-section {
+  background: linear-gradient(90deg, #6b4d7a 0%, #7d5a8f 100%);
+  padding: 15px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.search-bar {
+  background: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  width: 350px;
+  text-align: center;
+  color: #333;
+  font-weight: 400;
+}
+
+.search-bar::placeholder {
+  color: #333;
+}
+
+/* Main Content */
+.main-content {
+  background: linear-gradient(180deg, #b8c6d0 0%, #5a7a8f 100%);
+  flex: 1;
+  padding: 25px 40px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.spyglass-icon {
+  width: 130px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.main-title {
+  font-size: 56px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+.subtitle {
+  font-size: 24px;
+  color: #2c3e50;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+/* Dossier Cards */
+.dossier-container {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.dossier-card {
+  width: 450px;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+}
+
+.dossier-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.dossier-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Make logo clickable */
+.header a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Detail Page Styles */
+.detail-content {
+  background: linear-gradient(180deg, #5a6c7d 0%, #3d4e5e 100%);
+  min-height: calc(100vh - 12vh);
+  padding: 40px 80px 50px;
+  overflow-y: auto;
+}
+
+.detail-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 70px;
+  max-width: 1500px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.detail-left {
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.detail-right {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.dino-image {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  display: block;
+  margin-left: 0;
+}
+
+.image-space {
+  min-height: 80px;
+}
+
+.info-box {
+  background: rgba(96, 125, 139, 0.7);
+  border: 3px solid rgba(189, 189, 189, 0.8);
+  border-radius: 8px;
+  padding: 35px 40px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  min-height: 160px;
+}
+
+.info-box h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.info-box p {
+  font-size: 18px;
+  color: white;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.info-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info-box li {
+  font-size: 18px;
+  color: white;
+  padding: 10px 0;
+  position: relative;
+  padding-left: 30px;
+}
+
+.info-box li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.note {
+  margin-top: 18px;
+  font-style: italic;
+}
+
+.giga-image {
+  max-width: 480px !important;
+}
+
+/* Search Dropdown */
+.search-section {
+  position: relative;
+}
+
+.search-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 40px;
+  width: 350px;
+  background: #1a1a1a;
+  border: 2px solid #8e44ad;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  display: none;
+  z-index: 1000;
+  max-height: 300px;
+  overflow-y: auto;
+  margin-top: 5px;
+}
+
+.dropdown-item {
+  padding: 12px 20px;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+  border-bottom: 1px solid #333;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-item:hover {
+  background: #8e44ad;
+  color: white;
+}
+
+/* Footer Links */
+.footer-links {
+  position: absolute;
+  bottom: 20px;
+  left: 40px;
+  right: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-left p {
+  font-size: 16px;
+  color: white;
+  margin: 0;
+}
+
+.external-link {
+  color: #9b59b6;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.external-link:hover {
+  color: #8e44ad;
+  text-decoration: underline;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.discord-text {
+  font-size: 18px;
+  color: white;
+  font-weight: 500;
+  margin: 0;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.discord-link img {
+  width: 70px;
+  height: 70px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.discord-link img:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
+}
+
+/* Mobile Friendly Stuff */
+@media screen and (max-width: 768px) {
+  /* Header */
+  .header {
+    padding: 10px 20px;
+    height: 10vh;
+  }
+  
+  .logo {
+    height: 50px;
+  }
+  
+  .header-title {
+    font-size: 28px;
+  }
+  
+  /* Search Section */
+  .search-section {
+    padding: 10px 20px;
+  }
+  
+  .search-bar {
+    width: 100%;
+    font-size: 16px;
+  }
+  
+  .search-dropdown {
+    right: 20px;
+    width: calc(100% - 40px);
+  }
+  
+  /* Main Content */
+  .main-content {
+    padding: 20px;
+  }
+  
+  .spyglass-icon {
+    width: 80px;
+  }
+  
+  .main-title {
+    font-size: 36px;
+  }
+  
+  .subtitle {
+    font-size: 18px;
+  }
+  
+  /* Dossier Cards */
+  .dossier-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .dossier-card {
+    width: 100%;
+    max-width: 350px;
+  }
+  
+  /* Footer Links */
+  .footer-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    bottom: 10px;
+    left: 20px;
+    right: 20px;
+  }
+  
+  .footer-left {
+    gap: 5px;
+  }
+  
+  .footer-left p {
+    font-size: 14px;
+  }
+  
+  .footer-right {
+    gap: 10px;
+  }
+  
+  .discord-text {
+    font-size: 16px;
+  }
+  
+  .discord-link img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  /* Detail Pages */
+  .detail-content {
+    padding: 20px;
+  }
+  
+  .detail-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .detail-left,
+  .detail-right {
+    grid-column: 1;
+  }
+  
+  .dino-image {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  
+  .giga-image {
+    max-width: 100% !important;
+  }
+  
+  .image-space {
+    min-height: 20px;
+  }
+  
+  .info-box {
+    padding: 20px 25px;
+  }
+  
+  .info-box h2 {
+    font-size: 24px;
+  }
+  
+  .info-box p,
+  .info-box li {
+    font-size: 16px;
+  }
+}
+
+/* Extra small phones */
+@media screen and (max-width: 480px) {
+  .header-title {
+    font-size: 22px;
+  }
+  
+  .main-title {
+    font-size: 28px;
+  }
+  
+  .subtitle {
+    font-size: 16px;
+  }
+  
+  .footer-left p {
+    font-size: 12px;
+  }
+  
+  .discord-text {
+    font-size: 14px;
+  }
+}
+
+/* Taming Guide Page */
+.guide-section-title {
+  font-size: 38px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+.guide-section-title:first-of-type {
+  margin-top: 0;
+}
+
+.guide-intro {
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  margin-bottom: 40px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Table Styles */
+.taming-table {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto 60px;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.taming-table thead {
+  background: linear-gradient(90deg, #6b4d7a 0%, #7d5a8f 100%);
+}
+
+.taming-table th {
+  padding: 18px;
+  text-align: left;
+  font-size: 17px;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.taming-table td {
+  padding: 16px 18px;
+  font-size: 16px;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+}
+
+.taming-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.taming-table tbody tr:hover {
+  background: #f0f0f0;
+}
+
+/* Difficulty Colors */
+.difficulty-easy {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.difficulty-medium {
+  color: #f39c12;
+  font-weight: bold;
+}
+
+.difficulty-hard {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.difficulty-veryhard {
+  color: #8e44ad;
+  font-weight: bold;
+}
+
+/* Guide Tips Section */
+.guide-tips {
+  background: rgba(96, 125, 139, 0.7);
+  border: 3px solid rgba(189, 189, 189, 0.8);
+  border-radius: 8px;
+  padding: 35px 40px;
+  max-width: 1300px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.guide-tips h3 {
+  font-size: 28px;
+  color: white;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.guide-tips ul {
+  list-style: none;
+  padding: 0;
+}
+
+.guide-tips li {
+  font-size: 18px;
+  color: white;
+  padding: 12px 0;
+  position: relative;
+  padding-left: 35px;
+  line-height: 1.7;
+}
+
+.guide-tips li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: white;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+/* Mobile Responsive for Guide */
+@media screen and (max-width: 768px) {
+  .guide-section-title {
+    font-size: 28px;
+    margin-top: 30px;
+  }
+  
+  .guide-intro {
+    font-size: 16px;
+  }
+  
+  .taming-table {
+    font-size: 13px;
+  }
+  
+  .taming-table th,
+  .taming-table td {
+    padding: 10px 8px;
+  }
+  
+  .taming-table th {
+    font-size: 14px;
+  }
+  
+  .guide-tips {
+    padding: 25px 20px;
+  }
+  
+  .guide-tips h3 {
+    font-size: 22px;
+  }
+  
+  .guide-tips li {
+    font-size: 16px;
+  }
+}
+
+/* Header Navigation */
+.header-nav {
+  margin-left: auto;
+  display: flex;
+  gap: 25px;
+}
+
+.header-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.header-nav a:hover {
+  background: rgba(155, 89, 182, 0.3);
+}
+
+/* Mobile Navigation */
+@media screen and (max-width: 768px) {
+  .header-nav {
+    gap: 15px;
+  }
+  
+  .header-nav a {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}
